@@ -43,7 +43,7 @@ export default ImageWrapper;
 
 const Wrapper = styled.canvas`
   background-image: url(${img1});
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
   max-width: 70%;
   position: absolute;

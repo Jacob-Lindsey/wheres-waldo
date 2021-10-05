@@ -7,7 +7,7 @@ const getPosition = (e, el) => {
     const relativeX = e.pageX - offsetLeft;
     const relativeY = e.pageY - offsetTop;
     
-    console.log([relativeX, relativeY, wasImageClicked]);
+    console.log(relativeX, relativeY);
 
     return ( [relativeX, relativeY, wasImageClicked] );
 }
