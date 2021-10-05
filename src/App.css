@@ -1,4 +1,5 @@
 .App {
+  position: relative;
   text-align: center;
 }
 
@@ -15,7 +16,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
