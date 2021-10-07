@@ -1,3 +1,6 @@
+// Gets the current position of the cursor, and caclulates it's relative position within the image element.
+// wasImageClicked acts as border detection.
+
 const getPosition = (e, el) => {
     const target = el.current;
     const wasImageClicked = el.current === e.target;
@@ -6,10 +9,7 @@ const getPosition = (e, el) => {
     const offsetTop = Math.round(rect.y);
     const relativeX = e.pageX - offsetLeft;
     const relativeY = e.pageY - offsetTop;
-    
-    console.log(relativeX, relativeY);
-
-    return ( [relativeX, relativeY, wasImageClicked] );
+    return ( [relativeX, relativeY, wasImageClicked, offsetLeft, offsetTop] );
 }
 
 export default getPosition;

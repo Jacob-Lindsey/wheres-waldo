@@ -1,20 +1,14 @@
 import './App.css';
-import { useState } from 'react';
-import DrawBoundingBox from './utils/drawBoundingBox';
-import ImageWrapper from './components/ImageWrapper';
 import styled from 'styled-components';
+import Routes from './Routes';
 
 function App() {
-
-  const [selections, setSelections] = useState([]);
-  const allSelections = [...selections]; 
-  const drawCircle = () => {DrawBoundingBox()};
 
   return (
     <div className="App">
       <header className="App-header"></header>
       <Container>
-        <ImageWrapper draw={drawCircle} />
+        <Routes />
       </Container>
     </div>
   );
@@ -23,8 +17,12 @@ function App() {
 export default App;
 
 const Container = styled.div`
+  align-items: flex-start;
   display: flex;
-  height: 100%;
   justify-content: center;
+  min-height: 100%;
   width: 100%;
+  @media (max-width: 1500px) {
+    align-items: start;
+  }
 `;

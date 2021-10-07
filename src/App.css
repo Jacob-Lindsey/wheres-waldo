@@ -1,4 +1,9 @@
+a {
+  text-decoration: none;
+}
+
 .App {
+  overflow: hidden;
   position: relative;
   text-align: center;
 }
@@ -8,6 +13,13 @@
   pointer-events: none;
 }
 
+@media (max-width: 1500px) {
+  .App {
+    overflow: auto;
+    overflow-y: scroll;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -15,7 +27,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  
   height: 5rem;
   display: flex;
   flex-direction: column;
