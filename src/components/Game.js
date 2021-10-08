@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { GameImageData } from './GameImageData';
+import BackButton from './BackButton';
 import GameOverScreen from './GameOverScreen';
 import HUD from './HUD';
 import ImageWrapper from './ImageWrapper';
@@ -33,6 +34,7 @@ const Game = (props) => {
         <>
             {gameOver ? <GameOverScreen timesClicked={timesClicked} /> :
             <>
+                <BackButton />
                 <HUD
                 level={props.level}
                 isGameStarted={props.isGameStarted}

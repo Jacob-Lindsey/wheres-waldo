@@ -27,8 +27,7 @@ const ClockWrapper = styled.div`
     font-family: 'Fira Sans';
     font-size: 3rem;
     font-weight: 600;
-    left: 1.2%;
-    outline: 5px solid rgba(20,20,20,0.3);
+    right: 1.2%;
     position: absolute;
     top: 2%;
     width: 10rem;

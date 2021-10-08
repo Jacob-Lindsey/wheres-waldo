@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { GameImageData } from './GameImageData';
+import BackButton from './BackButton';
 import LevelCard from './LevelCard';
 
 const LevelSelect = () => {
 
   return (
+    <>
+      <BackButton />
       <Container>
         <Link to='/game/1'>
             <LevelCard
@@ -29,6 +32,7 @@ const LevelSelect = () => {
             />
         </Link>
       </Container>
+    </>
   );
 }
 
@@ -38,7 +42,7 @@ const Container = styled.div`
   display: grid;
   gap: 4%;
   grid-template-columns: 33% 33% 33%;
-  margin-top: 1rem;
+  margin-top: 7.5%;
   min-height: 45rem;
   width: 75%;
  

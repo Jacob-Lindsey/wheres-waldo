@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
 
 @font-face {
   font-family: 'selawk';
@@ -20,7 +23,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont,'Domine', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Wood',
-    'selawk', 'selawkb', 'selawksb', 'selawksl',
+    'selawk', 'selawkb', 'selawksb', 'selawksl', 'Bebas Neue', 'Kanit', 'Rozha One',
     sans-serif, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

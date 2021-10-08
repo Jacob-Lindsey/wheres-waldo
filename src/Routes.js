@@ -1,8 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import LandingPage from './components/LandingPage';
-import LevelSelect from './components/LevelSelect';
 import Game from './components/Game';
+import Leaderboard from './components/Leaderboard';
+import LevelSelect from './components/LevelSelect';
+import MainMenu from './components/MainMenu';
+import Options from './components/Options';
 
 const Routes = () => {
 
@@ -12,9 +14,10 @@ const Routes = () => {
 
   return (
       <Switch>
-        {/* <Route exact path="/" component={LandingPage} /> */}
-        <Route exact path="/" component={LevelSelect} />
+        <Route exact path="/" component={MainMenu} />
         <Route exact path="/levelselect" component={LevelSelect} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/options" component={Options} />
         <Route exact path="/game/1">
             <Game level={lvl1} isGameStarted={true} />
         </Route>

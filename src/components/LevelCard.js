@@ -6,7 +6,8 @@ const LevelCard = (props) => {
 
   return (
       <Container img={image}>
-          <CardPanel>&#10036; {name} &#10036;</CardPanel>
+          <CardPanelTop>&#10036; {name} &#10036;</CardPanelTop>
+          <CardPanelBottom>&#9733;&#9733;&#9733;&#9734;&#9734;</CardPanelBottom>
       </Container>
   );
 }
@@ -19,7 +20,9 @@ const Container = styled.div`
     border-radius: 10px;
     box-shadow: 7px 7px 18px 3px rgba(10, 10, 10, 0.6);
     display: flex;
+    flex-direction: column;
     height: 100%;
+    justify-content: space-between;
     justify-self: end;
     outline: 2px solid rgba(255, 255, 255, 0.4);
     outline-offset: 3px;
@@ -30,8 +33,11 @@ const Container = styled.div`
     @media (max-width: 1500px) {
         width: 100%;
     }
-    &:hover > div {
+    &:hover > div:first-child {
         transform: translateY(0.1%);
+    }
+    &:hover > div:last-child {
+        transform: translateY(-0.1%);
     }
     &:before {
         background-image: url(${props => props.img});
@@ -53,7 +59,7 @@ const Container = styled.div`
     }
 `;
 
-const CardPanel = styled.div`
+const CardPanelTop = styled.div`
     align-items: center;
     background-color: #6b0607;
     box-shadow: 3px 3px 2px 2px rgba(10, 10, 10, 0.6);
@@ -67,6 +73,29 @@ const CardPanel = styled.div`
     text-decoration: none;
     text-transform: uppercase;
     transform: translateY(-100%);
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    z-index: 10;
+    @media (max-width: 1500px) {
+        height: 18%;
+        transform: none;
+    }
+`;
+
+const CardPanelBottom = styled.div`
+    align-items: center;
+    background-color: #6b0607;
+    box-shadow: 3px 3px 2px 2px rgba(10, 10, 10, 0.6);
+    color: #fdc91f;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 400;
+    height: 12.5%;
+    justify-content: center;
+    opacity: 0.9;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: translateY(100%);
     transition: all 0.4s ease-in-out;
     width: 100%;
     z-index: 10;
