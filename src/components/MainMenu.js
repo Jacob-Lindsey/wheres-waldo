@@ -27,11 +27,11 @@ const MenuContainer = styled.div`
 `;
 
 const TitleText = styled.div`
-    color: gold;
+    color: rgb(231,240,230);
     font-family: 'Rozha One';
     font-size: 8rem;
     letter-spacing: 2px;
-    text-shadow: 4px 3px 5px black;
+    text-shadow: 8px 6px 5px black;
 `;
 
 const Button = styled(Link)`

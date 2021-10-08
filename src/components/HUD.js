@@ -49,7 +49,9 @@ const Panel = styled.div`
     background-repeat: no-repeat;
     background-size: 125% 250%;
     box-shadow: 0px -5px 40px 8px black;
+    display: flex;
     height: 10rem;
+    justify-content: center;
     position: relative;
     width: 100%;
     &:before {
@@ -66,23 +68,25 @@ const Panel = styled.div`
 `;
 
 const PanelContent = styled.div`
+    column-gap: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     margin-top: 0.5rem;
     padding: 0 30px;
+    max-width: 1920px;
     @media (max-width: 1000px) {
          gap: 2%;
-  }
+    }
 `;
 
 const PanelItem = styled.p`
     align-items: center;
     color: #000;
     display: flex;
-    font-family: 'Domine';
-    font-size: 1.25rem;
-    font-weight: 800;
+    font-family: 'Helvetica Neue';
+    font-size: 1.5rem;
+    font-weight: 600;
     justify-content: center;
     line-height: 3rem;
     margin: 0;
@@ -103,10 +107,12 @@ const PanelItemFound = styled.p`
     justify-content: center;
     line-height: 3rem;
     margin: 0;
+    opacity: 0.4;
     text-transform: uppercase;
     text-decoration: line-through;
-    text-decoration-color: rgba(10,10,10,0.7);
-    text-decoration-thickness: 3px;
+    text-decoration-color: rgba(10,0,10,0.6);
+    text-decoration-style: wavy;
+    text-decoration-thickness: 4px;
     @media (max-width: 1000px) {
       font-size: 1rem;
       line-height: 1.5rem;

@@ -40,7 +40,7 @@ const LeaderboardContainer = styled.div`
 `;
 
 const TitleText = styled.div`
-    color: #ccc;
+    color: rgb(231,240,230);
     font-family: 'Kanit';
     font-size: 6rem;
     font-weight: 300;
