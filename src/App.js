@@ -1,16 +1,19 @@
 import './App.css';
 import styled from 'styled-components';
 import Routes from './Routes';
+import UserProvider from './providers/UserProvider';
 
 function App() {
 
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <Container>
-        <Routes />
-      </Container>
-    </div>
+    <UserProvider>
+      <div className="App">
+        <header className="App-header"></header>
+        <Container>
+          <Routes />
+        </Container>
+      </div>
+    </UserProvider>
   );
 }
 

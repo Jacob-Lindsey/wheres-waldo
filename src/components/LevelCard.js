@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import StarRating from './StarRating';
 
 const LevelCard = (props) => {
     
-  const { image, name } = props;
+  const { image, name, rating } = props;
 
   return (
       <Container img={image}>
           <CardPanelTop>&#10036; {name} &#10036;</CardPanelTop>
-          <CardPanelBottom>&#9733;&#9733;&#9733;&#9734;&#9734;</CardPanelBottom>
+          <CardPanelBottom rating={rating} >&#9733;&#9733;&#9733;&#9734;&#9734;</CardPanelBottom>
       </Container>
   );
 }
@@ -15,7 +16,7 @@ const LevelCard = (props) => {
 export default LevelCard;
 
 const Container = styled.div`
-    align-items: start;
+    align-items: center;
     border: 2px solid rgba(200,200,200,0.5);
     border-radius: 10px;
     box-shadow: 7px 7px 18px 3px rgba(10, 10, 10, 0.6);
@@ -82,7 +83,7 @@ const CardPanelTop = styled.div`
     }
 `;
 
-const CardPanelBottom = styled.div`
+const CardPanelBottom = styled(StarRating)`
     align-items: center;
     background-color: #6b0607;
     box-shadow: 3px 3px 2px 2px rgba(10, 10, 10, 0.6);

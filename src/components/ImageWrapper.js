@@ -18,6 +18,7 @@ const ImageWrapper = (props) => {
             let arr = getPosition(e, canvasRef);
             if (arr[0] && arr[1] && arr[2]) {
                 let isValid = checkPosition(arr, props.gameData);
+                alert.removeAll();
                 isValid
                     ? alert.success('Correct!')
                     : alert.error('Nope, try again...');

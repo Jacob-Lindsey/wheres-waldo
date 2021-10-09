@@ -4,14 +4,14 @@ import { GameImageData } from './GameImageData';
 import BackButton from './BackButton';
 import LevelCard from './LevelCard';
 
-const LevelSelect = () => {
-
+const LevelSelect = (ratings) => {
   return (
     <>
-      <BackButton />
+      <BackButton name='BACK' />
       <Container>
         <Link to='/game/1'>
             <LevelCard
+                rating={ratings.ratings[0]}
                 level={GameImageData[0].level}
                 name={GameImageData[0].name}
                 image={GameImageData[0].image}
@@ -19,6 +19,7 @@ const LevelSelect = () => {
         </Link>
         <Link to='/game/2'>
             <LevelCard
+                rating={ratings.ratings[1]}
                 level={GameImageData[1].level}
                 name={GameImageData[1].name}
                 image={GameImageData[1].image}
@@ -26,6 +27,7 @@ const LevelSelect = () => {
         </Link>
         <Link to='/game/3'>
             <LevelCard
+                rating={ratings.ratings[2]}
                 level={GameImageData[2].level}
                 name={GameImageData[2].name}
                 image={GameImageData[2].image}

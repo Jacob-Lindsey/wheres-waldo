@@ -5,7 +5,7 @@ const Options = (props) => {
     
   return (
     <OptionsContainer>
-        <BackButton />
+        <BackButton name='BACK' />
         <TitleText>OPTIONS</TitleText>
         <Button>OPTION 1</Button>
         <Button>OPTION 2</Button>

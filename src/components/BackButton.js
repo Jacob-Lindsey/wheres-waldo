@@ -1,12 +1,12 @@
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-const BackButton = () => {
+const BackButton = ({ className, name }) => {
     
     let history = useHistory();
 
     return (
-        <Button onClick={() => history.goBack()}>BACK</Button>
+        <Button className={className} onClick={() => history.goBack()}>{name}</Button>
     );
 }
 
@@ -19,8 +19,8 @@ const Button = styled.button`
     box-shadow: inset 3px 4px 8px black;
     cursor: pointer;
     font-family: 'Kanit';
-    font-size: 4rem;
-    font-weight: 600;
+    font-size: 3.4rem;
+    font-weight: 500;
     left: 2rem;
     line-height: 5rem;
     position: absolute;

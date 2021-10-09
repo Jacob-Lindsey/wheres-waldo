@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 
 const options = {
-  position: positions.TOP_RIGHT,
+  position: positions.TOP_CENTER,
   timeout: 4000,
   offset: '10px',
   transition: transitions.FADE

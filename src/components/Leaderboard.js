@@ -5,7 +5,7 @@ const Leaderboard = (props) => {
     
   return (
       <LeaderboardContainer>
-          <BackButton />
+          <BackButton name='BACK' />
           <TitleText>LEADERBOARD</TitleText>
           <ItemContainer>
             <Item />
