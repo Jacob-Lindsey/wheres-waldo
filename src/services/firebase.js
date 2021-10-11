@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { Redirect } from 'react-router';
 dotenv.config();
 
 firebase.initializeApp({

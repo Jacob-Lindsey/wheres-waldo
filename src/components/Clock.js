@@ -1,33 +1,51 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
-const Clock = () => {
+const Clock = (props) => {
 
-    const [time, setTime] = useState(new Date().toLocaleTimeString([], { minute: '2-digit', second: '2-digit' }));
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+    const [tenths, setTenths] = useState(0);
+
+    let paddedTenths = tenths.toString().padStart(2, '0');
+    let paddedSeconds = seconds.toString().padStart(2, '0');
+    let paddedMinutes = minutes.toString().padStart(2, '0');
+
 
     useEffect(() => {
-        const interval = setInterval(() =>
-            updateClock(), 1000);
-        return () => clearInterval(interval);
+        let interval = setInterval(() => {
+            if (tenths < 9) {
+                setTenths(tenths + 1)
+            } else {
+                setTenths(tenths * 0);
+                if (seconds < 59) {
+                    setSeconds(seconds + 1);
+                } else {
+                    setSeconds(seconds * 0);
+                    setMinutes(minutes + 1);
+                }
+            }
+            props.totalTime.current++;
+        }, 100);
+        return () => {
+            clearInterval(interval);
+        };
     });
 
-    const updateClock = () => {
-        setTime(new Date().toLocaleTimeString([], { minute: '2-digit', second: '2-digit' }));
-    };
 
     return (
-        <ClockWrapper> {time} </ClockWrapper>
+        <ClockWrapper> {paddedMinutes}:{paddedSeconds}:{paddedTenths} </ClockWrapper>
     );
 }
 
 export default Clock;
 
 const ClockWrapper = styled.div`
-    color: gold;
+    color: white;
     font-family: 'Fira Sans';
-    font-size: 3rem;
-    font-weight: 600;
-    right: 1.2%;
+    font-size: 2.9rem;
+    font-weight: 500;
+    right: 2%;
     position: absolute;
     top: 2%;
     width: 10rem;

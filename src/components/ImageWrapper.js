@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { positions, useAlert } from "react-alert";
+import React, { useEffect, useRef } from "react";
+import { useAlert } from "react-alert";
 import styled from "styled-components";
 import { checkPosition } from "../utils/checkPosition";
 import getPosition from "../utils/getPosition";
@@ -9,22 +9,24 @@ import Cursor from "./Cursor";
 
 const ImageWrapper = (props) => {
 
+
+    const { gameData, setGameData, totalTime } = props;
     const alert = useAlert();
     const canvasRef = useRef(null);
-    const levelImage = props.gameData.image;
+    const levelImage = gameData.image;
 
     useEffect(() => {
         let handleSelection = (e) => {
             let arr = getPosition(e, canvasRef);
             if (arr[0] && arr[1] && arr[2]) {
-                let isValid = checkPosition(arr, props.gameData);
+                let isValid = checkPosition(arr, gameData);
                 alert.removeAll();
                 isValid
                     ? alert.success('Correct!')
                     : alert.error('Nope, try again...');
                 if (isValid) {
                     isValid.found = true;
-                    props.setGameData(prev => ({
+                    setGameData(prev => ({
                         ...prev,
                         isValid
                     }))
@@ -35,11 +37,11 @@ const ImageWrapper = (props) => {
         return () => {
             window.removeEventListener('click', handleSelection);
           }
-    }, [alert, props]);
+    }, [gameData]);
 
     return (
         <>
-            <Clock />
+            <Clock totalTime={totalTime} />
             <Cursor canvasRef={canvasRef} />
             <Image src={levelImage} ref={canvasRef} />
         </>

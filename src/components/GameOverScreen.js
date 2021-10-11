@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import bgImg from "../images/felt-bg.jpg";
 import BackButton from "./BackButton";
@@ -9,7 +8,6 @@ const GameOverScreen = (props) => {
     const acc = (props.items / props.timesClicked) * 100;
     const accuracyPercentage = acc.toFixed(2);
     
-
     return (
 
         <Rating img={bgImg}>
@@ -18,7 +16,7 @@ const GameOverScreen = (props) => {
                 <StarRating rating={props.rating} />
                 <Score>
                     <Accuracy>ACCURACY: {accuracyPercentage} %</Accuracy>
-                    <Time>TIME: </Time>
+                    <Time>TIME: &nbsp;{props.totalTime.current / 10}&nbsp; SECONDS</Time>
                 </Score>
             </RatingContent>
             <BackToLevelSelect name='CONTINUE'/>

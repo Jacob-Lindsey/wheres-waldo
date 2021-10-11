@@ -1,7 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../providers/UserProvider';
 import { Redirect } from 'react-router';
-import { logOut } from '../services/firebase';
 import { Link } from 'react-router-dom';
 import Login from '../Login';
 import Logout from './Logout';
