@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { Redirect } from 'react-router';
+import 'firebase/compat/firestore';
 dotenv.config();
 
 firebase.initializeApp({
@@ -14,7 +14,11 @@ firebase.initializeApp({
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
 });
 
-export const auth = firebase.auth();
+const db = firebase.firestore();
+
+const timestamp = firebase.firestore.FieldValue.serverTimestamp();  
+
+const auth = firebase.auth();
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -34,3 +38,5 @@ export const logOut = () => {
     })
     window.location.reload();
 };
+
+export { db, timestamp, auth };

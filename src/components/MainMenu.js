@@ -35,12 +35,12 @@ const MainMenu = (props) => {
             ?
                 <>
                     <Login />
-                    <UsernameText>LOGIN TO TRACK YOUR SCORE {username}</UsernameText>
+                    <UsernameText> {username} </UsernameText>
                 </>
             :
                 <>
                     <Logout />
-                    <UsernameText>SIGNED IN AS: {username}</UsernameText>
+                    <UsernameText> {username} </UsernameText>
                 </>
           }
           
@@ -68,11 +68,11 @@ const MenuContainer = styled.div`
 const UsernameText = styled.div`
     color: #ccc;
     font-family: 'Kanit';
-    font-size: 1.9rem;
-    font-weight: 300;
+    font-size: 1.6rem;
+    font-weight: 500;
     position: absolute;
-    right: 3rem;
-    top: 2rem;
+    right: 15rem;
+    top: 2.8rem;
 `;
 
 const TitleText = styled.div`
@@ -88,7 +88,7 @@ const Button = styled(Link)`
     border: 0px solid transparent;
     border-radius: 10px;
     box-shadow: inset 3px 4px 8px black;
-    color: black;
+    color: #ccc;
     cursor: pointer;
     font-family: 'Kanit';
     font-size: 3.3rem;
@@ -101,7 +101,8 @@ const Button = styled(Link)`
     top: 2rem;
     width: 70%;
     &:hover {
-        background-color: rgba(255,255,255,0.095);
+        background-color: rgba(255,255,255,0.16);
         box-shadow: inset 4px 6px 10px black;
+        color: white;
     }
 `;

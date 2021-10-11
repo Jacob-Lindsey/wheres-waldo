@@ -20,7 +20,7 @@ const Cursor = (props) => {
         return () => {
             window.removeEventListener('mousemove', position);
           }
-    }, [props.canvasRef]);
+    }, []);
 
     return (
         <BoxWrapper style={boxPosition} ref={boxRef}>

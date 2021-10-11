@@ -77,10 +77,15 @@ const Time = styled.div`
 
 const BackToLevelSelect = styled(BackButton)`
     bottom: 4rem;
+    color: #ccc;
     font-size: 2.8rem;
     height: 6rem;
     left: auto;
     right: auto;
     top: auto;
     width: 25rem;
+    &:hover {
+        background-color: rgba(255,255,255,0.16);
+        color: white;
+    }
 `;

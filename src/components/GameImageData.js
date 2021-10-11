@@ -227,6 +227,8 @@ export const GameImageData = {
         yPos: 365,
       },
     ],
-  },
+  }
 }
+
+
 

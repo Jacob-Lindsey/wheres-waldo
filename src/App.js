@@ -1,7 +1,7 @@
-import './App.css';
 import styled from 'styled-components';
 import Routes from './Routes';
 import UserProvider from './providers/UserProvider';
+import './App.css';
 
 function App() {
 

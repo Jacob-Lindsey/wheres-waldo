@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { positions, useAlert } from "react-alert";
+import { useAlert } from "react-alert";
 import styled from "styled-components";
 import { checkPosition } from "../utils/checkPosition";
 import getPosition from "../utils/getPosition";
 import Clock from "./Clock";
 import Cursor from "./Cursor";
+import useFirestore from "../services/useFirestore";
+import { db } from "../services/firebase";
+import { doc, getDoc } from "firebase/compat/firestore";
 
 
 const ImageWrapper = (props) => {
@@ -12,7 +15,7 @@ const ImageWrapper = (props) => {
     const alert = useAlert();
     const canvasRef = useRef(null);
     const levelImage = props.gameData.image;
-
+    
     useEffect(() => {
         let handleSelection = (e) => {
             let arr = getPosition(e, canvasRef);
@@ -35,7 +38,7 @@ const ImageWrapper = (props) => {
         return () => {
             window.removeEventListener('click', handleSelection);
           }
-    }, [alert, props]);
+    }, [props.gameData]);
 
     return (
         <>
