@@ -1,12 +1,24 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import bgImg from "../images/felt-bg.jpg";
 import BackButton from "./BackButton";
 import StarRating from "./StarRating";
+import { createLeaderboardEntry } from "../utils/createLeaderboardEntry";
 
 const GameOverScreen = (props) => {
 
     const acc = (props.items / props.timesClicked) * 100;
     const accuracyPercentage = acc.toFixed(2);
+
+    useEffect(() => {
+        return () => createLeaderboardEntry(
+            props.gameData.name,
+            props.rating,
+            accuracyPercentage,
+            props.totalTime.current,
+            props.score.current
+        );
+    })
     
     return (
 
@@ -17,6 +29,7 @@ const GameOverScreen = (props) => {
                 <Score>
                     <Accuracy>ACCURACY: {accuracyPercentage} %</Accuracy>
                     <Time>TIME: &nbsp;{props.totalTime.current / 10}&nbsp; SECONDS</Time>
+                    <ScoreValue>SCORE: &nbsp; {props.score.current.toFixed(0)} </ScoreValue>
                 </Score>
             </RatingContent>
             <BackToLevelSelect name='CONTINUE'/>
@@ -65,6 +78,15 @@ const Accuracy = styled.div`
 `;
 
 const Time = styled.div`
+    color: #ccc;
+    font-family: 'Kanit';
+    font-size: 2.75rem;
+    font-weight: 300;
+    line-height: 6rem;
+    text-align: left;
+`;
+
+const ScoreValue = styled.div`
     color: #ccc;
     font-family: 'Kanit';
     font-size: 2.75rem;

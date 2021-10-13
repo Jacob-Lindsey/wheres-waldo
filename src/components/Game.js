@@ -47,7 +47,7 @@ const Game = (props) => {
 
     return (
         <>
-            {gameOverRef.current ? <GameOverScreen gameData={gameData} rating={ratings[level]} score={score.current} totalTime={totalTime} timesClicked={clickRef.current} items={gameData.items.length} /> :
+            {gameOverRef.current ? <GameOverScreen gameData={gameData} rating={ratings[level]} score={score} totalTime={totalTime} timesClicked={clickRef.current} items={gameData.items.length} /> :
             <>
                 <BackButton name='BACK' />
                 <HUD

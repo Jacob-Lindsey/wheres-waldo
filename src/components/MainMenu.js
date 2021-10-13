@@ -27,19 +27,18 @@ const MainMenu = (props) => {
         username = 'Anon-User';
     }
     
-
   return (
       <MenuContainer>
           {!user 
             ?
                 <>
                     <Login />
-                    <UsernameText>LOGIN TO TRACK YOUR SCORE {username}</UsernameText>
+                    <UsernameText>LOGIN TO TRACK YOUR SCORE</UsernameText>
                 </>
             :
                 <>
                     <Logout />
-                    <UsernameText>SIGNED IN AS: {username}</UsernameText>
+                    <UsernameText>{username}</UsernameText>
                 </>
           }
           
@@ -72,6 +71,7 @@ const UsernameText = styled.div`
     position: absolute;
     right: 3rem;
     top: 2rem;
+    width: 26rem;
 `;
 
 const TitleText = styled.div`

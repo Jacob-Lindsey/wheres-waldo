@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 dotenv.config();
 
 firebase.initializeApp({
@@ -33,3 +34,8 @@ export const logOut = () => {
     })
     window.location.reload();
 };
+
+export const app = firebase;
+export const db = firebase.firestore();
+export const leaderboardRef = db.collection('leaderboard');
+export const timestamp = firebase.firestore.FieldValue.serverTimestamp();

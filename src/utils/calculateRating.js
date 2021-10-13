@@ -4,22 +4,23 @@ export default function calculateRating(numberOfItems, numberOfClicks, totalTime
     let minTime = numberOfItems * 20; // 220 (22.0 seconds OR 220 units)
 
     let maxScore = 100000;
-    let penalty = ((totalTime - minTime) * 100);
-    let score = maxScore - penalty;
+    let timePenalty = ((totalTime - minTime) * 100);
+    let clickPenalty = minClicks / numberOfClicks;
+    let score = (maxScore - timePenalty) * clickPenalty;
+    let simplifiedScore = score / maxScore;
 
-    if (score > 0.9) {
+    if (simplifiedScore > 0.9) {
         newRating = 5;
-    } else if (score > 0.8) {
+    } else if (simplifiedScore > 0.8) {
         newRating = 4;
-    } else if (score > 0.6) {
+    } else if (simplifiedScore > 0.6) {
         newRating = 3;
-    } else if (score > 0.4) {
+    } else if (simplifiedScore > 0.4) {
         newRating = 2;
-    } else if (score > 0.2) {
+    } else if (simplifiedScore > 0.2) {
         newRating = 1;
     } else {
         newRating = 0;
     }
-    console.log(score)
     return [newRating, score];
 }

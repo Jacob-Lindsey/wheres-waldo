@@ -29,7 +29,6 @@ const HUD = (props) => {
   );
 }
 
-
 export default HUD;
 
 const Container = styled.div`

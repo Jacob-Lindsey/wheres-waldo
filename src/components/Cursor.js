@@ -10,8 +10,9 @@ const Cursor = (props) => {
     const boxRef = useRef();
 
     useEffect(() => {
+        const refPersist = props.canvasRef.current; 
         let position = (e) => {
-            let arr = getPosition(e, props.canvasRef);
+            let arr = getPosition(e, props.canvasRef, refPersist);
             if (arr[0] && arr[1] && arr[2]) {
                 DrawBoundingBox(arr, setBoxPosition);
             }
